@@ -1,0 +1,17 @@
+{
+  "name": "drupal/geocoder",
+  "type": "drupal-module",
+  "description": "Converts strings into lat/lon.",
+  "homepage": "https://www.drupal.org/project/geocoder",
+  "license": "GPL-2.0",
+  "authors": [
+    {
+      "name": "See contributors",
+      "homepage": "https://www.drupal.org/node/1294050/committers",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/geocoder"
+  }
+}
