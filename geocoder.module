@@ -1,8 +1,23 @@
 <?php
 
 /**
- * Implements hook_composer_json_alter().
+ * Geocodes the given string.
+ *
+ * @param $searchstring
+ *   A string representing a location to be geocoded, e.g. an address.
+ * @return \Geocoder\Result\ResultInterface|\Geocoder\ResultInterface|NULL
+ *   The determined geocode if geocoding was successful, NULL otherwise.
  */
-function geocoder_composer_json_alter(&$json) {
-  $json['require']['willdurand/geocoder'] = '2.7.0';
+function geocoder_geocode($searchstring) {
+  $adapter = new \Geocoder\HttpAdapter\GuzzleHttpAdapter();
+  $geocoder = new \Geocoder\Geocoder();
+  $geocoder->registerProvider(new \Geocoder\Provider\OpenStreetMapProvider($adapter));
+
+  try {
+    $geocode = $geocoder->geocode($searchstring);
+    return $geocode;
+  } catch (Exception $e) {
+    watchdog_exception('geocoder', $e);
+  }
+  return NULL;
 }

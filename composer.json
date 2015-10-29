@@ -1,17 +1,11 @@
 {
-  "name": "drupal/geocoder",
-  "type": "drupal-module",
-  "description": "Converts strings into lat/lon.",
-  "homepage": "https://www.drupal.org/project/geocoder",
-  "license": "GPL-2.0",
-  "authors": [
-    {
-      "name": "See contributors",
-      "homepage": "https://www.drupal.org/node/1294050/committers",
-      "role": "Developer"
+    "name": "drupal/geocoder",
+    "description": "Provides the geocoder module.",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "require": {
+        "willdurand/geocoder": "~2.7",
+        "guzzle/guzzle": "~3.8"
     }
-  ],
-  "support": {
-    "issues": "https://www.drupal.org/project/issues/geocoder"
-  }
 }
