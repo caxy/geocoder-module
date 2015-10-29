@@ -19,6 +19,13 @@ class APIKeysForm extends ConfigFormBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function getEditableConfigNames() {
+    return array('geocoder.google');
+  }
+
+  /**
    * {@inheritdoc}.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
