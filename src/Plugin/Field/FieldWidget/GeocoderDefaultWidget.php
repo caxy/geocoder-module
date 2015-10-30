@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\geocoder\Plugin\Field\FieldWidget\GeocoderWidget.
+ * Contains \Drupal\geocoder_geofield\Plugin\Field\FieldWidget\Geocoder_geofieldDefaultWidget.
  */
 
-namespace Drupal\geocoder\Plugin\Field\FieldWidget;
+namespace Drupal\geocoder_geofield\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
@@ -13,18 +13,17 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 
 /**
- * Plugin implementation of the 'geocoder_default' widget.
+ * Widget implementation of the 'geocoder_default' widget.
  *
  * @FieldWidget(
  *   id = "geocoder_widget",
  *   label = @Translation("Geocoder"),
  *   field_types = {
  *     "string"
- *   },
+ *   }
  * )
  */
-class GeocoderWidget extends WidgetBase {
-
+class GeocoderDefaultWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
