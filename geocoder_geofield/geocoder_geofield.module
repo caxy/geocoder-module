@@ -16,6 +16,7 @@ function geocoder_geofield_searchstring_callbacks($name = FALSE) {
     $callbacks = array(
       'addressfield' => 'geocoder_geofield_format_addressfield',
       'string' => 'geocoder_geofield_format_textfield',
+      'address' => 'geocoder_geofield_format_address',
     );
   }
   if ($name !== FALSE) {
@@ -328,5 +329,26 @@ function geocoder_geofield_format_addressfield($addresses) {
  *   A search string for geocoding.
  */
 function geocoder_geofield_format_textfield($text) {
-  return $text;
+
+  //geocoder expects a string
+  $string = $text[0]['value'];
+
+  return $string;
 }
+
+/**
+ * Format a "address" field value into a search string for geocoding.
+ *
+ * @param $text
+ *   The text field value.
+ * @return string
+ *   A search string for geocoding.
+ */
+function geocoder_geofield_format_address($text) {
+
+  //geocoder expects a string
+  $string = $text[0]['address_line1'].' '.$text[0]['address_line2'].', '.$text[0]['locality'].' '.$text[0]['postal_code'];
+
+  return $string;
+}
+
